@@ -12,47 +12,54 @@
 \maketitle
 
 \section*{Abstract}
-The adaptability of network protocol (ANP), which means whether the protocol can be deployed to the network 
+The adaptability of network protocol(ANP), which means whether the protocol can be deployed to the network 
 and used extensively after a period of evolution. Many protocols developed slowly or failed, although they 
-met the requirements of design technically. We propose a new model of ANP  which has two models to improve 
-the adaptability, the self-evolution model(SEM) and the user dynamic selection evolution model(UDSEM). SEM 
-determines whether the new network protocol can survive in evolution by simulating the evolution process of 
-the protocol in the protocol stack. UDSEM counts the new user's penetration by simulating the transfer process 
-of new protocol users in logical network. Then calculate the communication efficiency of new protocol evolves 
-to the final state through the adaption of new protocol model to measure the adaptability of new network protocol, 
-formulate the adaptability evaluation model based on the communication efficiency. We also present some main factors 
-which affect the ANP and methods to improve the adaptability by analyzing the impact of factors on the ANP.  After 
-theoretic model simulation analysis, we draw some conclusions. The protocols at the waist of the hourglass appear 
-to have less survival, while the lower and higher layers tend to live longer and easier. Improving the utility, 
-the external utility of the protocol and the efficiency of the converters appropriately can play important roles 
-in improving the ANP. The network protocol adaptability evolution model we proposed can be applied to assess the ANP.
+meet the requirements of design technically. We propose a new model which has two models to improve the ANP, 
+self-evolution model(SEM) before the protocols deployed to the network and user dynamic behavior evolution 
+model(UDBEM) after the protocols applied to the real network. SEM determines whether the new network protocol 
+can survive by simulating the evolution process of the protocol in the protocol stack. UDBEM counts the new 
+user's penetration by simulating the transformation process of new protocol users' states in logical network. 
+We propose a evaluation model on the basis of communication efficiency, then measure the degree of the ANP by 
+calculating the communication of the new protocols envolves to the final states through the model. We also 
+present some factors which affect the ANP and methods to improve the ANP by analyzing these factors.  After 
+theoretic model simulation analysis, we draw some conclusions. The protocols at the waist of the hourglass 
+appear to have less survival, while the lower and higher layers tend to live longer and easier. Improving the 
+utility, the external utility of the protocol and the efficiency of the converters appropriately play important 
+roles in improving the ANP. The network protocol adaptability evolution model we proposed can be applied to 
+assess the ANP.
 
 \setlength{\parskip}{0.5\baselineskip}
 \par\noindent \textbf {Key Words:}
 Adaptability, Network Protocol, Communication Efficiency, Penetration
+
 \section{Introduction}
-The Internet community has specified a large number of protocols to date, although they were developed, these protocols 
-have achieved varying degrees of success. Two major dimensions on which a protocol can be evaluated are scale and purpose. 
-Purpose can be explained whether the protocol could meet the design goals, which belongs to technical areas. Scale relates 
-to the protocols were deployed at last, whether the numbers of users expected. Lots of protocols were not deployed  extensively. 
-For example, IPv6 caused great concern since 1996, its deployment and usage is not optimistic at the moment compared to IPv4. 
- Most research on IPv6 is focused on technical research, such as, IP address allocation, dual stack coexistence, new network 
- protocol and so on, which makes it dose not get enough attention about how to deploy and operate. That's why IPv6 develops 
- so slowly although we made lots of progress.  This shows the research and develop about protocol is not just a technical 
- problem, but the benefits, deployment expense, switch costs are important factors whether the protocol can be accepted by 
- users after the protocol is applied to the network. It is the degree of users's acceptance of the protocol called "adaptability" 
- after the protocol is applied to the network for a period. So not only the features and performance should be focused but the 
- adaptability when we develop the protocol. Research on TANP, enabling developers to focus on technology to improve performance 
- while designing the protocol , follow the protocol-related technology that focus on how to improve the adaptability of the protocol, 
- increase the degree of users's acceptance. That makes different for lowering the costs and reducing the blindness of protocol development.  
- The emerging of various theories and methods lay a foundation for TANP which makes  TANP a very popular research at home and abroad. 
- However,  the research of TANP is never easy, because the developers were not take economic, environment factors into consideration 
- even based on false assumptions. Besides, common agreement has not been reached about evaluate the adaptability home and abroad, 
- that's the problem to be solved.
+The Internet community has specified a large number of protocols to date, although they were developed, these 
+protocols have achieved varying degrees of success. Two major dimensions on which a protocol can be evaluated 
+are scale and purpose. Purpose can be explained whether the protocol could meet the design goals, which belongs 
+to technical areas. Scale relates to the protocols are deployed at last, whether the numbers of users expected. 
+Lots of protocols were not deployed  extensively. For example, IPv6 caused great concern since 1996, its deployment 
+and usage is not optimistic at the moment compared to IPv4. Most research on IPv6 is focused on technical research, 
+such as, IP address allocation, dual stack coexistence, new network protocol and so on, which makes it dose not 
+get enough attention about how to deploy and operate. That's why IPv6 develops so slowly although we make lots of 
+progress. This shows the research and development about protocol is not just a technical problem, but the benefits, 
+deployment expense, switch costs are important factors whether the protocol can be accepted by users after the 
+protocols are applied to the network. It is the degree of users's acceptance of the protocol called "adaptability" 
+after the protocols are applied to the network for a period. So not only the features and performance should be 
+focused but the adaptability when we develop the protocol. Research on the ANP, enabling developers to focus on 
+technology to improve performance while designing the protocol, follow the protocol-related technology that 
+focus on how to improve the adaptability of the protocol, increase the degree of users's acceptance. That makes 
+different for lowering the costs and reducing the blindness of protocol development. The emerging of various 
+theories and methods lay a foundation for the ANP which makes the ANP a very popular research at home and abroad. 
+However, the research of TANP is never easy, because the developers did not take economic, environment factors into 
+consideration even based on false assumptions. Besides, common agreement has not been reached about evaluate the ANP 
+home and abroad, that's the problem to be solved.
+
 \section{Problem Analysis}
-The methods focused on TANP research  has two categories which is  intuitive methods of measurement and  modeling analysis. 
-Traditional studies suggest that there are five factors can affect the deployment of a new protocol, they are relative advantage, compatibility, complexity, workability, observability. They study the effects of  economic factors, external network properties on the deployment of 
-protocol and evaluate the adaptability of IPv6 from economic perspective by visiting equipment manufacturers, application 
+The methods focused on the ANP research has two categories which is intuitive methods of measurement and modeling 
+analysis. Traditional studies suggest that there are five factors can affect the deployment of a new protocol, 
+they are relative advantage, compatibility, complexity, workability and observability. They study the effects of 
+%economic factors, external network properties on the deployment of protocol and evaluate the adaptability of IPv6 
+%from economic perspective by visiting equipment manufacturers, application 
 providers, ISP and users[10]. Colitti L et al evaluate the adaptability of IPv6 as a user. When users post HTTP requests, 
 they can choose post the data to the sever by IPv4 only or by dual-stack. They apply this method to Google then count and 
 analyze the post data over past year,  the result shows a small-scale IPv6 deployment[11]. Zhus' opinion is that reasons 
