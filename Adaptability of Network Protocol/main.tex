@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage{amsmath}
 \geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
 
 \title{Modeling the Adaptability of Network Protocol}
@@ -141,13 +142,14 @@ according to the state transition policy based on user protocol. When the intern
 the nodes can establish network topology according to the states and the protocol communication strategies of them,
 then evaluate the ANP by calculating the communication efficiency.
 \par
+
 \centerline{\includegraphics[width=.45\textwidth]{Figure1.png}}
 \centerline{Figure 1 Dynamic Evolution Model of Network Protocols}
 
 \subsection{Self-evolution Model}
-The Internet protocol stack has a layered architecture that resembles an hourglass. Akhshabi also propose a model based 
-on the hourglass-shaped Internet protocol stack to explain how the model relates to protocol stacks and evolving network 
-architectures.The evolution of layered protocol stacks leads to an Hourglass-Shaped Architecture. That help us understand 
+The Internet protocol stack has a layered architecture that resembles an hourglass. Akhshabi also propose a model based
+on the hourglass-shaped Internet protocol stack to explain how the model relates to protocol stacks and evolving network
+architectures.The evolution of layered protocol stacks leads to an Hourglass-Shaped Architecture. That help us understand
 the self-evolution of the protocols.
 
 \subsection{User Dynamic Behavior Evolution Model(UDBEM)}
@@ -157,71 +159,82 @@ the self-evolution of the protocols.
 \centerline{Figure 2 Network Topology}
 
 As is shown in Figure 4, there are two kinds of nodes, User Nodes(UN) and Application Service Provider Nodes(ASPN).
-The UN is someone who choose the service provided by a new protocol. The UNs are different according the protocols 
-they chose, for example, the network layer is a network composed of routers and ISP[42]. The ASPNs provide service 
-for UNs, for example ISP can provide Internet service for users and they can get profits from users. A ASPN can provide 
-service for dozens of UNs. The UNs can establish a physical topology, while the relationship between UNs and ASPNs form 
-a logical network. The UNs have two states A and B, where A represents the user still use the current protocol, B states indicates
-that the UN use another new protocol which can provide the same service compared with the old one.  The more B states users,
-the better adaptability of the new protocol has. The ASPNs have four states, A, B, BA and AB, where states A represents
-that the ASPN can only provide the service of protocol A, service B cannot be provided, vice versa, while states AB
-indicates the the ASPN can provide the service of protocol A, and compatible conversion interface for protocol A
-users of protocol B, vice versa.
+The UN is someone who choose the service provided by a new protocol. The UNs are different according the protocols
+they chose, for example, the network layer is a network composed of routers and ISP[42]. The ASPNs provide service
+for UNs, for example ISP can provide Internet service for users and they can get profits from users. A ASPN can provide
+service for dozens of UNs. The UNs can establish a physical topology, while the relationship between UNs and ASPNs form
+a logical network. The UNs have two states A and B, where A represents the user still use the current protocol, B states
+indicates that the UN choose another new protocol which can provide the same service compared with the old one. The
+more B state users, the better adaptability of the new protocol has. The ASPNs have four states, A, B, BA and AB,
+where states A represents that the ASPN can only provide the service of protocol A, service B cannot be provided,
+vice versa, while states AB indicates the the ASPN can provide the service of protocol A, and compatible conversion
+interface for protocol A users of protocol B, vice versa.
+
 The transition strategy between ASPN and UN is as follows:
-
-The transition strategy between ASPN and UN depends on the utility of them, so the utility of a single UN in state A is
-
-Figure 4.1
-
-where alpha represents the utility provided by protocol A, NX indicates the amount of protocol A users who communicate to
-this protocol A user and beta NX represents the whole utility provided by NX useras of protocol A.  beta is the influence
-coefficient controls by network, where NXb represents the amount of protocol B users who communicate to this protocol A
-users and the betaN(1-q) represents the utility provided by protocol B users who choose the BA converter . Similarly
-understood, the utility of a single UN in state B is
-
-Figure 4.2
-
-The utility of the ASPN in state A:
-
-Figure 4.3
-
-where NXA is the amount of the users in state A while NXB is the mount  of users in state B, NX(1-q) represents  utility of
-the A state user who communicate to the nodes in BA state and the (1-q) indicates the utility of the A state user who communicate
-to the users. Similarly understood, the utility of ASPN in state B is
-
-Figure 4.4
-
-The utility of the ASPN in state AB:
-
-Figure 4.5
-
-where sigma is the for which the A and B  communication within ASPN who provided the AB converter, Ni represents
-the amount of B state user who communicate to the ith node. Similarly understood, the utility of the ASPN in state BA:
-
-Figure 4.6
-
-Whether the state of change at a time depending on the changed node can obtain the utility which cannot be obtain
-by the not-change nodes. For the UN, if the change the protocol from A to B, the following conditions must be met:
-
-Figure 4.7
-
-that is the sum of the utility  and the cost for the user from state A to state B less then the utility of state B.
+The transition strategy between ASPN and UN depends on the utility of them, so the utility \(U_{A}\) of a single UN
+in state A is:
+\begin{displaymath} \label{eq:eps}
+U_{A}=\alpha_{A}+\beta Nx_{A}+\beta N(1-q_{A})x_{B}
+\end{displaymath}
+where \(\alpha\) in (\ref{eq:eps}) represents the utility provided by protocol A, \(Nx_{A}\)indicates the amount of 
+A users who communicate to this protocol A user and \(\beta Nx_{A}\) represents the whole utility provided 
+by \(Nx_{A}\)users who communicate to each other. \(\beta\)is the influence coefficient controled by network. 
+And \(Nx_{B}\)represents the numbers of protocol B user who communicate to this A user and the \(\beta N(1-q_{A})\)
+represents the utility provided by \(N_{B}\)protocol B users who choose the BA converter.The \((1-q_{A})\)indicate the 
+utility comes from A state users interact to the A state users. Similarly understood, the utility \(U_{B}\)of a single UN in 
+state B is (\ref{eq:eps}):
+\begin{displaymath}\label{eq:eps}
+U_{B}=\alpha_{B}+\beta Nx_{B}+\beta N(1-q_{B})x_{A}
+\end{displaymath}
+The utility \(U_{ASPN(A)}\) of the ASPN in state A is (\ref{eq:eps}):
+\begin{displaymath}\label{eq:eps}
+U_{ASPN(A)}=\alpha_{A}+N_{1}x_{A}+N_{2}x_{B}+N_{3}x_{B}(1-q_{A})
+\end{displaymath}
+where \(N_{1}x_{A}\), \(N_{2}x_{B}\) represent the number of the users in state A and state B seprately, 
+\(N_{3}x_{B}(1-q_{A})\) represents utility of the A state user who communicate to the B state users by 
+BA converters. Similarly understood, the utility \(U_{ASPN(B)}\)of ASPN in state B is (\ref{eq:eps}):
+\begin{displaymath} \label{eq:eps}
+U_{ASPN{B}}=\alpha_{B}+N_{1}x_{B}+N_{2}x_{A}+N_{3}x_{A}(1-q_{A})
+\end{displaymath}
+The utility \(U_{ASPN(AB)}\)of the ASPN in state AB:
+\begin{displaymath}
+U_{ASPN{AB}}=\alpha_{A}+N_{1}x_{A}+N_{2}x_{B}+\sum_{i=0}^{Nx_{B}}(1-q_{B})N_{i}x_{B}
+\end{displaymath}
+where \(\sum_{i=0}^{Nx_{A}}(1-q_{A})N_{i}x_{B}\) is the utility that \(N_{i}x_{A}\) communicate to the B state users
+within ASPN who provided the AB converter, \(N_{i}\) represents the number of B state users who communicate to the ith node. 
+Similarly understood, the utility \(U_{ASPN(BA)}\) of the ASPN in state BA:
+\begin{displaymath}
+U_{ASPN(BA)}=\alpha_{B}+N_{1}x_{B}+N_{2}x_{A}+\sum_{i=0}^{Nx_{B}}(1-q_{B})N_{i}x_{A}
+\end{displaymath}
+Whether the state will change at a time depending on whether the node can obtain more utility after changing the state. 
+For the UN, if the switch the protocol from A to B, the following conditions must be met:
+\begin{displaymath}
+U_{A}+S\leq U_{B}
+\end{displaymath}
+that is the sum of the utility and the cost for the user from state A to state B less then the utility of state B.
 For ASPNs, there are four states of transformation, state A to state AB, state AB to state B, state A to B and state B
 to state BA, but the conditions must be met:
-
-Figure 4.8-4.11
-
+\begin{equation}
+\begin{aligned}
+U_{ASPN(A)}+S \leq U_{ASPN(AB)}\\
+U_{ASPN(AB)}+S \leq U_{ASPN(B)}\\
+U_{ASPN(A)}+S \leq U_{ASPN(B)}\\
+U_{ASPN(B)}+S \leq U_{ASPN(BA)}
+\end{aligned}
+\end{equation}
 The following will introduce the model algorithm in detail.
 
-Firstly, check the initial state of each user of the network according to the new protocol, then set the numbers and state
- of nodes. The dynamic evolution that user selected is a discrete-time evolution model, There are two following steps for
- every evolution process:
+Firstly, check the initial state of each user of the network according to the new protocol, then set the numbers of ASPN 
+areas and state of ASPNs. The UDBEM is a discrete-time evolution model, There are two following steps for
+every evolution process:
 \begin{enumerate}
     \item Calculate all the UNs and ASPNs' utility.
     \item Revise the states for each node according to the transmission policy.
 \end{enumerate}
    Calculate the utility and revise the states according to the policy after the network reaches a steady state.
+
 \subsection{The ANP Model of Evaluation Based on the Network Connection States}
+
 \subsubsection{Build the Communication Topology}
 Every node in the network will reaches to the final state within the dynamic evolution model, as is shown in Figure 5,
 the numbers of B state nodes in the final state. The numbers of B state users is the appearance of the ANP, while the deep reason
