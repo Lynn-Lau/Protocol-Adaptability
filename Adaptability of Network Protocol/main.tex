@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
 
 \title{Modeling the Adaptability of Network Protocol}
@@ -176,12 +177,12 @@ in state A is:
 \begin{displaymath} \label{eq:eps}
 U_{A}=\alpha_{A}+\beta Nx_{A}+\beta N(1-q_{A})x_{B}
 \end{displaymath}
-where \(\alpha\) in (\ref{eq:eps}) represents the utility provided by protocol A, \(Nx_{A}\)indicates the amount of 
-A users who communicate to this protocol A user and \(\beta Nx_{A}\) represents the whole utility provided 
-by \(Nx_{A}\)users who communicate to each other. \(\beta\)is the influence coefficient controled by network. 
+where \(\alpha\) in (\ref{eq:eps}) represents the utility provided by protocol A, \(Nx_{A}\)indicates the amount of
+A users who communicate to this protocol A user and \(\beta Nx_{A}\) represents the whole utility provided
+by \(Nx_{A}\)users who communicate to each other. \(\beta\)is the influence coefficient controled by network.
 And \(Nx_{B}\)represents the numbers of protocol B user who communicate to this A user and the \(\beta N(1-q_{A})\)
-represents the utility provided by \(N_{B}\)protocol B users who choose the BA converter.The \((1-q_{A})\)indicate the 
-utility comes from A state users interact to the A state users. Similarly understood, the utility \(U_{B}\)of a single UN in 
+represents the utility provided by \(N_{B}\)protocol B users who choose the BA converter.The \((1-q_{A})\)indicate the
+utility comes from A state users interact to the A state users. Similarly understood, the utility \(U_{B}\)of a single UN in
 state B is (\ref{eq:eps}):
 \begin{displaymath}\label{eq:eps}
 U_{B}=\alpha_{B}+\beta Nx_{B}+\beta N(1-q_{B})x_{A}
@@ -190,8 +191,8 @@ The utility \(U_{ASPN(A)}\) of the ASPN in state A is (\ref{eq:eps}):
 \begin{displaymath}\label{eq:eps}
 U_{ASPN(A)}=\alpha_{A}+N_{1}x_{A}+N_{2}x_{B}+N_{3}x_{B}(1-q_{A})
 \end{displaymath}
-where \(N_{1}x_{A}\), \(N_{2}x_{B}\) represent the number of the users in state A and state B seprately, 
-\(N_{3}x_{B}(1-q_{A})\) represents utility of the A state user who communicate to the B state users by 
+where \(N_{1}x_{A}\), \(N_{2}x_{B}\) represent the number of the users in state A and state B seprately,
+\(N_{3}x_{B}(1-q_{A})\) represents utility of the A state user who communicate to the B state users by
 BA converters. Similarly understood, the utility \(U_{ASPN(B)}\)of ASPN in state B is (\ref{eq:eps}):
 \begin{displaymath} \label{eq:eps}
 U_{ASPN{B}}=\alpha_{B}+N_{1}x_{B}+N_{2}x_{A}+N_{3}x_{A}(1-q_{A})
@@ -201,12 +202,12 @@ The utility \(U_{ASPN(AB)}\)of the ASPN in state AB:
 U_{ASPN{AB}}=\alpha_{A}+N_{1}x_{A}+N_{2}x_{B}+\sum_{i=0}^{Nx_{B}}(1-q_{B})N_{i}x_{B}
 \end{displaymath}
 where \(\sum_{i=0}^{Nx_{A}}(1-q_{A})N_{i}x_{B}\) is the utility that \(N_{i}x_{A}\) communicate to the B state users
-within ASPN who provided the AB converter, \(N_{i}\) represents the number of B state users who communicate to the ith node. 
+within ASPN who provided the AB converter, \(N_{i}\) represents the number of B state users who communicate to the ith node.
 Similarly understood, the utility \(U_{ASPN(BA)}\) of the ASPN in state BA:
 \begin{displaymath}
 U_{ASPN(BA)}=\alpha_{B}+N_{1}x_{B}+N_{2}x_{A}+\sum_{i=0}^{Nx_{B}}(1-q_{B})N_{i}x_{A}
 \end{displaymath}
-Whether the state will change at a time depending on whether the node can obtain more utility after changing the state. 
+Whether the state will change at a time depending on whether the node can obtain more utility after changing the state.
 For the UN, if the switch the protocol from A to B, the following conditions must be met:
 \begin{displaymath}
 U_{A}+S\leq U_{B}
@@ -224,28 +225,35 @@ U_{ASPN(B)}+S \leq U_{ASPN(BA)}
 \end{equation}
 The following will introduce the model algorithm in detail.
 
-Firstly, check the initial state of each user of the network according to the new protocol, then set the numbers of ASPN 
-areas and state of ASPNs. The UDBEM is a discrete-time evolution model, There are two following steps for
+Firstly, check the initial state of each user of the network according to the new protocol, then set the numbers of
+ASPN areas and state of ASPNs. The UDBEM is a discrete-time evolution model, There are two following steps for
 every evolution process:
 \begin{enumerate}
     \item Calculate all the UNs and ASPNs' utility.
     \item Revise the states for each node according to the transmission policy.
 \end{enumerate}
-   Calculate the utility and revise the states according to the policy after the network reaches a steady state.
+Calculate the utility and revise the states according to the policy after the network reaches a steady state.
 
 \subsection{The ANP Model of Evaluation Based on the Network Connection States}
 
 \subsubsection{Build the Communication Topology}
 Every node in the network will reaches to the final state within the dynamic evolution model, as is shown in Figure 5,
-the numbers of B state nodes in the final state. The numbers of B state users is the appearance of the ANP, while the deep reason
-that causes the protocol selecting is the communication efficiency provided by the protocols. So the relationship between
-the ANP and the final stage of evolution is that the UNs and ASPNs will establish a topology and communicate based on
-the transmission policy and the state pf the users in the final evolution stage.
+the number of B state nodes in the final state. The number of B state users is the appearance of the ANP, while the
+reason that causes the protocol selecting is the communication efficiency provided by the protocols. So the relationship
+between the ANP and the final stage of evolution is that the UNs and ASPNs will establish a topology and communicate
+based on the transmission policy and the state pf the users in the final evolution stage.
+\par
 
-Figure 5
+\centerline{\includegraphics[width=.6\textwidth]{Figure3.png}}
+\centerline{Figure 3 The communication network topology }
+
 
 The connection among the ASPNs is already known to the UNs, and the connection among UNs in different areas charged by different
-ASPNs determined by the connection of ASPNs. The connection among the ASPNs is shown Figure 5.1, and the
+ASPNs determined by the connection of ASPNs. The connection among the ASPNs is shown Figure 5.1, and the "\(\surd\)" represents the
+connection can be established between the converters, the "\(\times\)" not.
+\par
+\centerline{\includegraphics[width=.7\textwidth]{Table1.png}}
+\centerline{Table5.1 connection relationship among ASPNs}
 
 AS we can see from the chart, the ASPNs in different states can only establish connection between the UNs within the specific ASPN.
 We obtain the connection relationship as shown in Table 5.2 according to the connectivity rules.
