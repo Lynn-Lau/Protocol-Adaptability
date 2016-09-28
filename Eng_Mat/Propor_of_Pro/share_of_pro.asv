@@ -1,0 +1,10 @@
+
+%Self-Evolution 
+p = 1:1:100;
+a = load('C:\Users\lynn\Desktop\PapertoTrans\Data_src\Eng_Mat\Layer_100.txt');
+figure(1);
+plot(p,a,'-*r');
+xlabel('The layer L of the protocols','FontWeight','bold');
+ylabel('The proportion of the protocol','FontWeight','bold');
+title('Distribution of initial occupancy of each layer','FontSize',12,'FontWeight','bold');
+grid on;
