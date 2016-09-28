@@ -1,6 +1,8 @@
 % Calculate the effect of the Self_Utility 
 % on the ANP of new Protocols.
 % ¦ÁB/¦ÁA
+clc;
+clear;
 
 x = 0:1:100;
 y1 = load('C:\Users\lynn\Desktop\PapertoTrans\Data_src\Eng_Mat\SelfUtiInflu\a18.txt');
