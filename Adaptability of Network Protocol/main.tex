@@ -5,7 +5,11 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{amsmath}
+\usepackage{array}
+\usepackage{caption}
 \usepackage{amssymb}
+\usepackage{diagbox}
+\usepackage{multirow}
 \geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
 
 \title{Modeling the Adaptability of Network Protocol}
@@ -148,6 +152,7 @@ then evaluate the ANP by calculating the communication efficiency.
 \centerline{Figure 1 Dynamic Evolution Model of Network Protocols}
 
 \subsection{Self-evolution Model}
+
 The Internet protocol stack has a layered architecture that resembles an hourglass. Akhshabi also propose a model based
 on the hourglass-shaped Internet protocol stack to explain how the model relates to protocol stacks and evolving network
 architectures.The evolution of layered protocol stacks leads to an Hourglass-Shaped Architecture. That help us understand
@@ -252,14 +257,37 @@ The connection among the ASPNs is already known to the UNs, and the connection a
 different ASPNs determined by the connection of ASPNs. The connection among the ASPNs is shown Figure 5.1, and the
 "\(\surd\)" represents the connection can be established between the converters, the "\(\times\)" not.
 \par
-\centerline{\includegraphics[width=.7\textwidth]{Table1.png}}
+\centerline{\includegraphics[width=.5\textwidth]{Table1.png}}
 \centerline{Table 5.1 connection relationship of ASPNs}
 
 AS we can see from the chart, the ASPNs in different states can only establish connection between the UNs within the
 specific ASPN. We obtain the connection relationship as shown in Table 5.2 according to the connectivity rules.
-\par
-\centerline{\includegraphics[width=.5\textwidth]{Table2.png}}
-\centerline{Table 5.2 connection relationship of UNs}
+% \par
+% \centerline{\includegraphics[width=.5\textwidth]{Table2.png}}
+% \centerline{Table 5.2 connection relationship of UNs}
+%\renewcommand\arraystretch{1.2}
+%\begin{table}
+% \centering
+%  \captionsetup{font={scriptsize}}
+ % \caption{The Connection Relationship of ASPNs}
+ % \begin{tabular}{|l|c|c|c|c|}
+  %\hline
+  %\diagbox{ASPN Nodes}{UN Nodes} & $A$ & $AB$ & $B$ & $BA$ \\
+  %\hline
+  %$A$ & ASPN A user with state A \\
+   %   %& ASPN B user with state BA
+    %  & ASPN B users with state AB \\
+     % %& ASPN B user with state B
+      %& $\times$ & $\times$ \\
+  %\hline
+  %$B$ & $\times$ & $\times$
+   %                 & ASPN B user with state B \\
+    %                & ASPN A user with state AB
+     %               & ASPN user with state A \\
+      %              & ASPN user with state BA \\
+  %\hline
+  %\end{tabular}
+%\end{table}
 
 \subsubsection{Calculate the efficiency of communication}
 Assume a communication network topology is a graph $G$ which has $M$ edges, $N$ points, so the communication efficiency
@@ -283,9 +311,25 @@ is calculated as follows:
 
 \section{Model Analysis}
 \subsection{Self-evolution}
-\par
-\centerline{\includegraphics[width=.7\textwidth]{Table3.png}}
-\centerline{Table 3.1 Basic Parameters}
+% \par
+% \centerline{\includegraphics[width=.7\textwidth]{Table3.png}}
+% \centerline{Table 3.1 Basic Parameters}
+\renewcommand\arraystretch{1.2}
+\begin{table}%{h}
+  \centering
+  \captionsetup{font={scriptsize}}
+  \caption{The Basic Paprameters}\label{tab:tab1}
+  \begin{tabular}{ccccc}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  L & $n_0$ & $\mu$ & $N_{max}$ & c \\
+  \hline
+  10 & 10 & $5\%$ & 1000 & 0.7 \\
+  \hline
+\end{tabular}
+
+\end{table}
+
 As is shown in Figure 3.8, 3.9 and 3.10, the new protocol layer in the protocol stack 10, 50, 100, its initial proportion
 of the new protocol is the first after decreasing increasing trend. So the initial proportion is minimum of intermediate
 layer, while from the middle to upper or lower layer showing an increasing trend initial proportion. The protocols in the
@@ -295,9 +339,25 @@ waist of the hourglass appear has less survival.
 
 \subsection{Evolution Model Based on Dynamic Section of User Behavior}
 The basic parameters of the experiment described as shown in Table 4.1,
-\par
-\centerline{\includegraphics[width=.7\textwidth]{Table4.png}}
-\centerline{Table 4.1 Basic parameters}
+%\par
+%\centerline{\includegraphics[width=.7\textwidth]{Table4.png}}
+% \captionsetup{font={scriptsize}}
+%\centerline{Table 4.1 Basic parameters}
+\renewcommand\arraystretch{1.2}
+\begin{table}%{}
+  \centering
+  \captionsetup{font={scriptsize}}
+  \caption{The Basic Paprameters}\label{tab:tab1}
+  \begin{tabular}{ccccccccc}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  L & $\alpha_A$ & $\alpha_B$ & $q_A$ & $q_B$ &$\beta$ & $S$ & $N$ & $M$ \\
+  \hline
+  10 & 1000 & 1900 & 0.1 & 0.1 & 0.001 & 1500 & 1000000 & 1000 \\
+  \hline
+\end{tabular}
+
+\end{table}
 
 \subsubsection{The Influence of the Protocol Utility to Adaptability}
 As is shown in Figure 4.1, the ANP will increase if we increase the utility of protocol B, we can get the penetration
@@ -398,13 +458,13 @@ IPv6 as a "Second layer protocol" to provide services for the upper layer not a 
 
 Table 6.3, 6.4
 
-As is shown in Figure 6.3, when the utility of external network $\beta=0.001$, the efficiency of IPv6-IPv4 converter is 
-92.4\% and the IPv4 and IPv6 protocol utility ratio $\alpha_B/alpha_A$ is 2, the IPv6 can be accepted and completely 
-replace IPv4 to achieve the full penetration, although it develops slowly.   The reason is that the government promote 
-the deployment of IPv6 vigorously which can make up for the economic losses during the deployment. If the adaptability 
-of the IPv6 wanted to be improved, we can do it in three ways: improve the utility of IPv6 protocol, to make it more 
-competitive compared to IPv4; Improve the external utility of the protocol, the government can make up for the economic 
-losses for deploying the IPv6 protocol; Improve the efficiency of IPv6-IPv4 converter, let the IPv4 users are willing 
+As is shown in Figure 6.3, when the utility of external network $\beta=0.001$, the efficiency of IPv6-IPv4 converter is
+92.4\% and the IPv4 and IPv6 protocol utility ratio $\alpha_B/alpha_A$ is 2, the IPv6 can be accepted and completely
+replace IPv4 to achieve the full penetration, although it develops slowly.   The reason is that the government promote
+the deployment of IPv6 vigorously which can make up for the economic losses during the deployment. If the adaptability
+of the IPv6 wanted to be improved, we can do it in three ways: improve the utility of IPv6 protocol, to make it more
+competitive compared to IPv4; Improve the external utility of the protocol, the government can make up for the economic
+losses for deploying the IPv6 protocol; Improve the efficiency of IPv6-IPv4 converter, let the IPv4 users are willing
 to use the IPv6 protocol.
 
 \subsection{The comparative Experiments of UDP and DCCP}
@@ -412,37 +472,37 @@ The basic experiment parameters are set as follows,
 \par
 \centerline{\includegraphics[width=.6\textwidth]{Table6.png}}
 \centerline{Table 6.2 Basic Parameters}
-The Figure 6.4 represents the average probability of UDP and DCCP exist in the stack after modeling the self-evolution 
-many times. As we can see from the result, the more the number of experiments, the probability of the final DCCP 
-protocol decreases in the protocol stack.  It can be seen in the evolution of the protocol stack that the UDP protocol 
+The Figure 6.4 represents the average probability of UDP and DCCP exist in the stack after modeling the self-evolution
+many times. As we can see from the result, the more the number of experiments, the probability of the final DCCP
+protocol decreases in the protocol stack.  It can be seen in the evolution of the protocol stack that the UDP protocol
 cannot be fully replaced by the DCCP.
 
 Figure 6.5 6.6
 
-We build 7860000 UDP users and 2140000 DCCP users in the network which has 10000000 nodes, utilizing the UDP users 
-share and DCCP users share from the protocol self-evolution model and according to the evolution model based on 
-dynamic selection of user behavior. All the users reached to steady state after a period of evolution. As is shown 
-in Figure 6.5,when the utility of external network $\beta=0.001$, the efficiency of DCCP-UDP converter is 92.4\% 
-and the IPv4 and IPv6 protocol utility ratio $\alpha_B/\alpha_A$ is 1.8, the DCCP can be accepted and completely 
-replace UDP to achieve the full penetration, although it develops slowly. Besides, when the DCCP share reaches around 
-39\%, it will not change any more. If the adaptability of the DCCP wanted to be improved, we can do it in three ways: 
-improve the utility of DCCP protocol, to make it more competitive compared to UDP; Improve the external utility of 
-the protocol, the government can make up for the economic losses for deploying the DCCP protocol; Improve the efficiency 
+We build 7860000 UDP users and 2140000 DCCP users in the network which has 10000000 nodes, utilizing the UDP users
+share and DCCP users share from the protocol self-evolution model and according to the evolution model based on
+dynamic selection of user behavior. All the users reached to steady state after a period of evolution. As is shown
+in Figure 6.5,when the utility of external network $\beta=0.001$, the efficiency of DCCP-UDP converter is 92.4\%
+and the IPv4 and IPv6 protocol utility ratio $\alpha_B/\alpha_A$ is 1.8, the DCCP can be accepted and completely
+replace UDP to achieve the full penetration, although it develops slowly. Besides, when the DCCP share reaches around
+39\%, it will not change any more. If the adaptability of the DCCP wanted to be improved, we can do it in three ways:
+improve the utility of DCCP protocol, to make it more competitive compared to UDP; Improve the external utility of
+the protocol, the government can make up for the economic losses for deploying the DCCP protocol; Improve the efficiency
 of DCCP-UDP converter, let the UDP users are willing to use the DCCP protocol.
 \section{Conclusion}
-We can draw some conclusions from the protocol self-evolution simulation. First,  the protocols at the waist of 
-the hourglass appear to have less survival, while the lower and higher layers tend to live longer and easier. 
-Second, if we improve the utility of the protocol, the external utility of the protocol and the efficiency of 
-the converters appropriately can play important roles in improving the ANP. Third, the higher efficiency of the 
-communication, the better ANP by establishing network topology based on the interact policy of the users and 
-nodes. Forth and last, the network protocol adaptability evolution model we proposed can be applied to assess 
-the ANP, according to the comparative experiments of IPv4, IPv6 and UDP and DCCP. The network protocol adaptability 
+We can draw some conclusions from the protocol self-evolution simulation. First,  the protocols at the waist of
+the hourglass appear to have less survival, while the lower and higher layers tend to live longer and easier.
+Second, if we improve the utility of the protocol, the external utility of the protocol and the efficiency of
+the converters appropriately can play important roles in improving the ANP. Third, the higher efficiency of the
+communication, the better ANP by establishing network topology based on the interact policy of the users and
+nodes. Forth and last, the network protocol adaptability evolution model we proposed can be applied to assess
+the ANP, according to the comparative experiments of IPv4, IPv6 and UDP and DCCP. The network protocol adaptability
 evolution model guiding significance for the development and deployment of the network protocols.
 
-Our model can simulate the dynamic evolution of the new protocols, furthermore, to measure the adaptability 
-through the communication efficiency of the network topology established. In addition to this, we also proposed 
-methods to improve the ANP. But we still have some shortcomings about the model need to be further refined and 
-improved. In the future, we can establish a protocol dynamic evolution model and check by simulating,  then 
-evaluate the ANP by deploying to the real networks. We can also focuse on other factors which affect on the 
+Our model can simulate the dynamic evolution of the new protocols, furthermore, to measure the adaptability
+through the communication efficiency of the network topology established. In addition to this, we also proposed
+methods to improve the ANP. But we still have some shortcomings about the model need to be further refined and
+improved. In the future, we can establish a protocol dynamic evolution model and check by simulating,  then
+evaluate the ANP by deploying to the real networks. We can also focuse on other factors which affect on the
 ANP, increase the availability of the model.
 \end{document}
