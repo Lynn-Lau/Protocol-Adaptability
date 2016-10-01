@@ -15,6 +15,8 @@
   * section4 文中第四部分插图的原始数据，仿真代码和插图；
   * section33 文中第三章，第三节的插图原始数据，仿真代码和插图；
 
+  在本文件夹的下面都会有同一个Python脚本，count.py，其作用是对原始数据的数据进行统计，因为是瞄点画图，所以需要确定点的数量，为了避免人工计数，使用Python脚本进行了计数。
+
 * Adaptability of Network Protocol
 
   此文件夹下面的图片都是，文中的插图，main.tex为LaTex的源码，main.pdf为生成的PDF文档。
