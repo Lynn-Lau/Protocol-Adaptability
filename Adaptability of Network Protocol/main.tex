@@ -28,8 +28,8 @@ self-evolution model(SEM) before the protocols deployed to the network and user 
 model(UDBEM) after the protocols applied to the real network. SEM determines whether the new network protocol
 can survive by simulating the evolution process of the protocol in the protocol stack. UDBEM counts the new
 user's penetration by simulating the transformation process of new protocol users' states in logical network.
-We propose a evaluation model on the basis of communication efficiency, then measure the ANP by calculating
-the communication efficiency of the new protocols envolves to the final states through the model. We also
+We propose an evaluation model on the basis of communication efficiency, then measure the ANP by calculating
+the communication efficiency of the new protocols evolves to the final states through the model. We also
 present some factors which affect the ANP and methods to improve the ANP by analyzing these factors. After
 theoretic model simulation analysis, we draw some conclusions. The protocols at the waist of the hourglass
 appear to have less survival, while the lower and higher layers tend to live longer and easier. Increasing
@@ -52,12 +52,12 @@ research, such as, IP address allocation, dual stack coexistence, new network pr
 it dose not get enough attention about how to deploy and operate. That's why IPv6 develops so slowly although
 we make lots of progress[5]. This shows the research and development about protocol is not just a technical
 problem, but the benefits, deployment expense, switch costs are important factors about whether the protocols
-can be accepted by users after the protocols are applied to the network[7][8]. The degree of users's acceptance
+can be accepted by users after the protocols are applied to the network [7][8]. The degree of users' acceptance
 of the protocols called "adaptability" after they are applied to the network for a period. So not only the
 features and performance should be focused but the adaptability when we develop the protocol. Research on the
 ANP, enabling developers to focus on technology to improve performance while designing the protocol, follow
 the protocol-related technology that focus on how to improve the adaptability of the protocol, increasing the
-degree of users's acceptance. That makes different for lowering the costs and reducing the blindness of protocol
+degree of users' acceptance. That makes different for lowering the costs and reducing the blindness of protocol
 development. The emerging of various theories and methods lay a foundation for the ANP which makes the ANP a very
 popular research at home and abroad. However, the research of TANP is never easy, because the developers did not
 take economic, environment factors into consideration even based on false assumptions. Besides, common agreement
@@ -68,44 +68,44 @@ The methods focused on the ANP research has two categories which is intuitive me
 analysis. Traditional studies suggest that there are five factors can affect the deployment of a new protocol,
 they are relative advantage, compatibility, complexity, workability and observability. They study the effects of
 economic factors, external network properties on the deployment of protocol from economic perspective by visiting
-equipment manufacturers, application providers, ISP and users then evaluate the adaptability of IPv6[10].
+equipment manufacturers, application providers, ISP and users then evaluate the adaptability of IPv6 [10].
 Colitti.L et al evaluate the adaptability of IPv6 as a user. When users post HTTP requests, they can choose post
 the data to the sever by IPv4 or by dual-stack. They apply this method to Google then count and analyze the post
-data over past year, the result shows a small-scale IPv6 deployment[11]. Zhus' opinion is that reasons affecting
+data over past year, the result shows a small-scale IPv6 deployment [11]. Zhus' opinion is that reasons affecting
 the ANP are complex, and it is impossible to draw a conclusion by simple simulation or performance measurement. They
-visite 19 experts and have a discussion about the problems of HIP protocol is not widely used and its deployment
+visited 19 experts and have a discussion about the problems of HIP protocol is not widely used and its deployment
 policy from June 2011, 16 to September 1, finally analyze the reason why HIP protocol is not widely deployed. On
 the one hand, intuitive measurement can analyze the ANP in some degree but the result is not convincing, on the
 other hand, the evaluation of the ANP based on measurement should be executed after the protocol applied to the
 network and the evaluation always fall behind in development, so the evaluation cannot provide theoretical guidance
-at the beginning of develop the protocol[7].
+at the beginning of develop the protocol [7].
 
 To further characterize the evolution of the protocol in the network, scholars begin apply modeling to analyze the
 ANP, the adaptability model can be divided into two major categories of static and dynamic. Hovav et al has established
 a model for describing protocol adopted by users and evaluating the impact of various factors on the deployment
-of the IPv6 protocol from environmental triggers and ites features[12]. Gyarmati et al applied game theory for
+of the IPv6 protocol from environmental triggers and its features [12]. Gyarmati et al applied game theory for
 the research and study about transition and deployment of IPv6, they take the Internet ASs as interconnect and
 independent players and treat these ASs can choose their running network protocol. The study shows that if all
 the ASs running IPv6 will be Nash Equilibrium, and if there are some ASs deployed IPv6 at the beginning in the
-Internet then the whole network will be deployed IPv6 faster and more feasible[13]. The author modeled the LOC/ID
+Internet then the whole network will be deployed IPv6 faster and more feasible [13]. The author modeled the LOC/ID
 protocol, if the LOC/ID want to be deployed extensively, not only its own technical advantages but economic factors
 encountered during its deployment. The scale of LOC/ID depends on the reduced price and the efficiency of deployment,
-and the price of LOC/ID deployment must be less than BGP protocol[14]. They analyze the effects of the converters and
+and the price of LOC/ID deployment must be less than BGP protocol [14]. They analyze the effects of the converters and
 other economic factors on the migration of network by using differential equation. The authors assume that there are
 two different architectures, and the proportion of deployment is
 \(x_{1}\) and \(x_{2}\).
-Then they take the technical quality, the proportion of deployment and the price factor affect on different users
+Then they take the technical quality, the proportion of deployment and the price factor affect on different users'
 utility into consideration and build a dynamic economic model of technology deployment. And find than there is a
-balance during the deployment of two protocols even though they have different proportions at the begining of
-deployment[15].These studies examined how the user choose the two incompatible protocols. The articles focuse
+balance during the deployment of two protocols even though they have different proportions at the beginning of
+deployment [15]. These studies examined how the user choose the two incompatible protocols. The articles focus
 on how the converter help the users who using incompatible protocols to interact. Studies indicates that the external
-network will lead more balance, and the converter make a great different on balancing the deployment[16][17][18].
+network will lead more balance, and the converter make a great different on balancing the deployment [16] [17] [18].
 Farrel extended the above model to a new architecture, this model evaluated the ANP from a practical aspect to the
 user's perspective rather than an ISP or a equipment supplier. The model assumes that there are N users, each user
 will choose a protocol A or B, so if the utility of B is greater than A, users of protocol A switch to protocol B.
 Then A, B protocol can achieve the purpose of coexistence through the converter. We can evaluate the ANP by analyzing
 the utility of one single user and all users. Zhu, etc propose the evaluation method for the application of the
-ANP based on its architecture, and construct the corresponding evaluation model[20]. Two mechanisms about multimedia
+ANP based on its architecture, and construct the corresponding evaluation model [20]. Two mechanisms about multimedia
 data application are evaluated in this paper, the result shows that both theoretically advantageous protocols should
 be deployed under certain restrictions in order to play their advantage. Users and ISP should combine with own
 application requirements to choose the corresponding architecture and protocol to deploy.
@@ -113,32 +113,32 @@ application requirements to choose the corresponding architecture and protocol t
 Because the static model cannot describe the dynamic process of the acceptance of the protocol, the researchers establish
 a dynamic model of the ANP and Internet protocol for analysis. They analyze the coexistence of more than one network
 technology and the dynamic of the ANP in single user and system. The authors note that when a plurality of balance
-exist, the deployment of a small change in the parameters of the system will affect the balance significantly[21].
+exist, the deployment of a small change in the parameters of the system will affect the balance significantly [21].
 In order to demonstrate the problems during the deployment, Eardley propose a architecture and apply it to the multipath
-TCP and Congestion Exposure analysis[22]. In this paper they use non-cooperative game theory for finding the most
+TCP and Congestion Exposure analysis [22]. In this paper they use non-cooperative game theory for finding the most
 suitable flow control protocol of each data flow. Each flow has a utility that depends on throughput and also a
 disutility depends on the queue lengths encountered along the route taken. Flows will choose a combination of protocols
-that would maximize their utility, then the available bandwidth will be distributed to them in a fair game way[23].
+that would maximize their utility, then the available bandwidth will be distributed to them in a fair game way [23].
 They present an approach to Internet Quality of Service that they believe is more migration-friendly than current
-network-based mechanisms in the stage of design a new network protocol[24]. Akhtar by building models reveal "lock-in"
+network-based mechanisms in the stage of design a new network protocol [24]. Akhtar by building models reveal "lock-in"
 phenomenon depends mainly on the impact of network topology influence and potential users of the protocol, and analyzes
-the factors that influence differences on the same network at different network topologies selected by the user.[25].
+the factors that influence differences on the same network at different network topologies selected by the user [25].
 Joe-Wong develop a model for user adoption of a base wireless technology and a bundle of the base plus a supplementary
-technology[26]. This paper studies the effects of the maximum utility and the deployment coverage on the balance of a
+technology [26]. This paper studies the effects of the maximum utility and the deployment coverage on the balance of a
 outcome. Akhshabi establish a abstract model EvoArch, which reflects the evolution of the OSI protocol stack. He says
-that there will be competition among the same layer protocols for providing the same services for upper protocols[27].
-Li and Xu et al extends the model[13], and apply the extended model to analyze trends in the triple play of Internet,
-telecommunications and television networks[28]. Studies shows that no matter what is the original proportion of the
-three networks, they will eventually converge to one or two networks and the the higher proportion of initial network
+that there will be competition among the same layer protocols for providing the same services for upper protocols [27].
+Li and Xu et al extends the model [13], and apply the extended model to analyze trends in the triple play of Internet,
+telecommunications and television networks [28]. Studies shows that no matter what is the original proportion of the
+three networks, they will eventually converge to one or two networks and the higher proportion of initial network
 has more advantage.
 
 We proposed a model of the ANP based on the existing analysis of adaptability, and simulated the evolution process.
 Then analyze the factors affect the ANP and raise new methoda which can improve the adaptability by researching
 the change of proportion from the beginning to the final state during the evolution of a new protocol. Users will
-establish a connection depend on the status, and we will evalute the ANP by communicating the communication efficiency.
+establish a connection depend on the status, and we will evaluate the ANP by communicating the communication efficiency.
 
 \section{Model Description}
-As is shown in Figure 1, the protocol evolution can divide into two stages. (1) The Self-evolution Stage, propose a
+As is shown in Figure 1, the protocol evolution can divide into two stages. (1) The Self-evaluation Stage, propose a
 evolution model in protocol stack according to the protocol location, competitiveness and vitality of the protocol
 before being deployed to the network, then we can get the initial penetration of a new protocol after being deployed
 in real networks. (2) The Internal Evolution Stage, after the deployment of the new protocol to the network, we must
@@ -166,14 +166,14 @@ the self-evolution of the protocols.
 
 As is shown in Figure 4, there are two kinds of nodes, User Nodes(UN) and Application Service Provider Nodes(ASPN).
 The UN is someone who choose the service provided by a new protocol. The UNs are different according the protocols
-they chose, for example, the network layer is a network composed of routers and ISP[42]. The ASPNs provide service
+they chose, for example, the network layer is a network composed of routers and ISP [42]. The ASPNs provide service
 for UNs, for example ISP can provide Internet service for users and they can get profits from users. A ASPN can provide
 service for dozens of UNs. The UNs can establish a physical topology, while the relationship between UNs and ASPNs form
 a logical network. The UNs have two states A and B, where A represents the user still use the current protocol, B states
 indicates that the UN choose another new protocol which can provide the same service compared with the old one. The
 more B state users, the better adaptability of the new protocol has. The ASPNs have four states, A, B, BA and AB,
 where states A represents that the ASPN can only provide the service of protocol A, service B cannot be provided,
-vice versa, while states AB indicates the the ASPN can provide the service of protocol A, and compatible conversion
+vice versa, while states AB indicates thez` ASPN can provide the service of protocol A, and compatible conversion
 interface for protocol A users of protocol B, vice versa.
 
 The transition strategy between ASPN and UN is as follows:
@@ -184,7 +184,7 @@ U_{A}=\alpha_{A}+\beta Nx_{A}+\beta N(1-q_{A})x_{B}
 \end{displaymath}
 where \(\alpha\) in (\ref{eq:eps}) represents the utility provided by protocol A, \(Nx_{A}\)indicates the amount of
 A users who communicate to this protocol A user and \(\beta Nx_{A}\) represents the whole utility provided
-by \(Nx_{A}\)users who communicate to each other. \(\beta\)is the influence coefficient controled by network.
+by \(Nx_{A}\)users who communicate to each other. \(\beta\)is the influence coefficient controlled by network.
 And \(Nx_{B}\)represents the numbers of protocol B user who communicate to this A user and the \(\beta N(1-q_{A})\)
 represents the utility provided by \(N_{B}\)protocol B users who choose the BA converter.The \((1-q_{A})\)indicate the
 utility comes from A state users interact to the A state users. Similarly understood, the utility \(U_{B}\)of a single UN in
@@ -196,7 +196,7 @@ The utility \(U_{ASPN(A)}\) of the ASPN in state A is (\ref{eq:eps}):
 \begin{displaymath}\label{eq:eps}
 U_{ASPN(A)}=\alpha_{A}+N_{1}x_{A}+N_{2}x_{B}+N_{3}x_{B}(1-q_{A})
 \end{displaymath}
-where \(N_{1}x_{A}\), \(N_{2}x_{B}\) represent the number of the users in state A and state B seprately,
+where \(N_{1}x_{A}\), \(N_{2}x_{B}\) represent the number of the users in state A and state B separately,
 \(N_{3}x_{B}(1-q_{A})\) represents utility of the A state user who communicate to the B state users by
 BA converters. Similarly understood, the utility \(U_{ASPN(B)}\)of ASPN in state B is (\ref{eq:eps}):
 \begin{displaymath} \label{eq:eps}
