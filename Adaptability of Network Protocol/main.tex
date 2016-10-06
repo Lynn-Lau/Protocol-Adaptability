@@ -23,19 +23,19 @@
 \section*{Abstract}
 The adaptability of network protocol(ANP), which means whether the protocol can be deployed to the network
 and used extensively after a period of evolution. Many protocols developed slowly or failed, although they
-meet the requirements of design technically. We propose a new model which has two models to improve the ANP,
-self-evolution model(SEM) before the protocols deployed to the network and user dynamic behavior evolution
-model(UDBEM) after the protocols applied to the real network. SEM determines whether the new network protocol
-can survive by simulating the evolution process of the protocol in the protocol stack. UDBEM counts the new
-user's penetration by simulating the transformation process of new protocol users' states in logical network.
-We propose an evaluation model on the basis of communication efficiency, then measure the ANP by calculating
-the communication efficiency of the new protocols evolves to the final states through the model. We also
-present some factors which affect the ANP and methods to improve the ANP by analyzing these factors. After
-theoretic model simulation analysis, we draw some conclusions. The protocols at the waist of the hourglass
-appear to have less survival, while the lower and higher layers tend to live longer and easier. Increasing
-the utility, the external utility of the protocol and the efficiency of the converters appropriately play
-important roles in improving the ANP. The network protocol adaptability evolution model we proposed can be
-applied to assess the ANP.
+meet the requirements of design technically. We propose a new approach which has two modules to evaluate
+the ANP, self-evolution model(SEM) before the protocols deployed to the network and user dynamic behavior
+evolution model(UDBEM) after the protocols applied to the real network. SEM determines whether the new
+network protocol can survive by simulating the evolution process of the protocols in the protocol stack.
+UDBEM counts the new user's share by simulating the transformation process of new protocol users' states
+in logical network. We propose the evaluation model on the basis of communication efficiency, then measure
+the ANP by calculating the communication efficiency of the new protocols evolves to the final states through
+the model. We also present some factors which affect the ANP and methods to improve the ANP by analyzing
+these factors. After theoretic model simulation analysis, we draw some conclusions. The protocols at the
+waist of the hourglass appear to have less survival, while the lower and higher layers tend to live longer
+and easier. Increasing the utility, the external utility of the protocol and the efficiency of the converters
+appropriately play important roles in improving the ANP. The network protocol adaptability evolution model
+we proposed can be applied to assess the ANP.
 
 \setlength{\parskip}{0.5\baselineskip}
 \par\noindent \textbf {Key Words:}
@@ -47,21 +47,20 @@ protocols have achieved varying degrees of success. Two major dimensions on whic
 are scale and purpose. Purpose can be explained whether the protocol could meet the design goals, which belongs
 to technical areas. Scale relates to the protocols are deployed at last, whether the numbers of users expected.
 Lots of protocols were not deployed extensively. For example, IPv6 caused great concern since 1996, its deployment
-and usage is not optimistic at the moment compared to IPv4[4]. Most research on IPv6 is focused on technical
+and usage is not optimistic at the moment compared to IPv4 [4]. Most research on IPv6 is focus on technical
 research, such as, IP address allocation, dual stack coexistence, new network protocol and so on, which make
 it dose not get enough attention about how to deploy and operate. That's why IPv6 develops so slowly although
-we make lots of progress[5]. This shows the research and development about protocol is not just a technical
-problem, but the benefits, deployment expense, switch costs are important factors about whether the protocols
-can be accepted by users after the protocols are applied to the network [7][8]. The degree of users' acceptance
-of the protocols called "adaptability" after they are applied to the network for a period. So not only the
-features and performance should be focused but the adaptability when we develop the protocol. Research on the
-ANP, enabling developers to focus on technology to improve performance while designing the protocol, follow
-the protocol-related technology that focus on how to improve the adaptability of the protocol, increasing the
-degree of users' acceptance. That makes different for lowering the costs and reducing the blindness of protocol
-development. The emerging of various theories and methods lay a foundation for the ANP which makes the ANP a very
-popular research at home and abroad. However, the research of TANP is never easy, because the developers did not
-take economic, environment factors into consideration even based on false assumptions. Besides, common agreement
-has not been reached about evaluate the ANP home and abroad, that's the problem to be solved.
+we make lots of progress [5]. The research and development about network protocols is not just a technical
+problem, but the benefits, deployment expense and switch costs which are important factors about whether the 
+protocols can be accepted by users after applying to the network [7][8]. The degree of users' acceptance
+of the protocols called \emph{adaptability} after they are applied to the network for a period. So not only 
+the features and performance should be focused but the adaptability when we develop the protocol. Researching 
+on the ANP helps developers focus on improving the performance and the degree of acceptance of the protocols. 
+That makes different for lowering the costs and reducing the blindness of protocol development. The emerging 
+of various theories and methods lay a foundation for the ANP research and makes the ANP a very popular at 
+home and abroad. However, the research of ANP is never easy, because the developers did not take economic, 
+environment factors into consideration even based on false assumptions. Besides, common agreement has not 
+been reached about how to evaluate the ANP, that's the problem to be solved.
 
 \section{Problem Analysis}
 The methods focused on the ANP research has two categories which is intuitive methods of measurement and modeling
