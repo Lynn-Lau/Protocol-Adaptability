@@ -113,16 +113,17 @@ application requirements to choose the corresponding architecture and protocol t
 
 Because the static model cannot describe the dynamic process of the acceptance of the protocol, the researchers establish
 a dynamic model of the ANP and Internet protocol for analysis. They analyze the coexistence of more than one network
-technology and the dynamic of the ANP in single user and system. The authors note that when a plurality of balance
-exist, the deployment of a small change in the parameters of the system will affect the balance significantly [21].
+protocols and the dynamic of the ANP in single user and system. The authors note that when a plurality of balance
+exist, a change in the parameters of the deployment system will affect the balance significantly [21].
 In order to demonstrate the problems during the deployment, Eardley propose a architecture and apply it to the multipath
 TCP and Congestion Exposure analysis [22]. In this paper they use non-cooperative game theory for finding the most
-suitable flow control protocol of each data flow. Each flow has a utility that depends on throughput and also a
+suitable flow control protocol of each data flow. Each flow has a utility that depends on throughput and a
 disutility depends on the queue lengths encountered along the route taken. Flows will choose a combination of protocols
 that would maximize their utility, then the available bandwidth will be distributed to them in a fair game way [23].
-They present an approach to Internet Quality of Service that they believe is more migration-friendly than current
-network-based mechanisms in the stage of design a new network protocol [24]. Akhtar by building models reveal "lock-in"
-phenomenon depends mainly on the impact of network topology influence and potential users of the protocol, and analyzes
+They then consider the practicalities of these guidelines, with a specific focus on Quality of Service issues and 
+highlight some technical areas that will require further research if Ambient Networks are to be designed in a “migration 
+friendly” way [24]. Akhtar by building models reveal "lock-in" phenomenon depends mainly on the impact of network topology 
+influence and potential users of the protocol, and analyzes
 the factors that influence differences on the same network at different network topologies selected by the user [25].
 Joe-Wong develop a model for user adoption of a base wireless technology and a bundle of the base plus a supplementary
 technology [26]. This paper studies the effects of the maximum utility and the deployment coverage on the balance of a
@@ -133,10 +134,10 @@ telecommunications and television networks [28]. Studies shows that no matter wh
 three networks, they will eventually converge to one or two networks and the higher proportion of initial network
 has more advantage.
 
-We proposed a model of the ANP based on the existing analysis of adaptability, and simulated the evolution process.
+We propose a model of the ANP based on the existing analysis of adaptability, and simulate the evolution process.
 Then analyze the factors affect the ANP and raise new methoda which can improve the adaptability by researching
-the change of proportion from the beginning to the final state during the evolution of a new protocol. Users will
-establish a connection depend on the status, and we will evaluate the ANP by communicating the communication efficiency.
+the change of share from the beginning to the final state during the evolution of a new protocol. Users will
+establish a connection depend on the status. Then we will evaluate the ANP by calculating the communication efficiency.
 
 \section{Model Description}
 As is shown in Figure 1, the protocol evolution can divide into two stages. (1) The Self-evaluation Stage, propose a
@@ -147,13 +148,14 @@ calculate the economic utility of each node firstly, then we can get the final p
 according to the state transition policy based on user protocol. When the internal evolution comes to the final state,
 the nodes can establish network topology according to the states and the protocol communication strategies of them,
 then evaluate the ANP by calculating the communication efficiency.
-\par
 
+
+\par
 \centerline{\includegraphics[width=.45\textwidth]{Figure1.png}}
 \centerline{Figure 1 Dynamic Evolution Model of Network Protocols}
 
-\subsection{Self-evolution Model}
 
+\subsection{Self-evolution Model}
 The Internet protocol stack has a layered architecture that resembles an hourglass. Akhshabi also propose a model based
 on the hourglass-shaped Internet protocol stack to explain how the model relates to protocol stacks and evolving network
 architectures.The evolution of layered protocol stacks leads to an Hourglass-Shaped Architecture. That help us understand
@@ -165,7 +167,7 @@ the self-evolution of the protocols.
 \centerline{\includegraphics[width=.5\textwidth]{Figure2.png}}
 \centerline{Figure 2 Network Topology}
 
-As is shown in Figure 4, there are two kinds of nodes, User Nodes(UN) and Application Service Provider Nodes(ASPN).
+As is shown in Figure 4, there are two kinds of nodes, User Nodes(UN) and Application Service Provide Nodes(ASPN).
 The UN is someone who choose the service provided by a new protocol. The UNs are different according the protocols
 they chose, for example, the network layer is a network composed of routers and ISP [42]. The ASPNs provide service
 for UNs, for example ISP can provide Internet service for users and they can get profits from users. A ASPN can provide
@@ -174,7 +176,7 @@ a logical network. The UNs have two states A and B, where A represents the user 
 indicates that the UN choose another new protocol which can provide the same service compared with the old one. The
 more B state users, the better adaptability of the new protocol has. The ASPNs have four states, A, B, BA and AB,
 where states A represents that the ASPN can only provide the service of protocol A, service B cannot be provided,
-vice versa, while states AB indicates thez` ASPN can provide the service of protocol A, and compatible conversion
+vice versa, while states AB indicates the ASPN can provide the service of protocol A, and compatible conversion
 interface for protocol A users of protocol B, vice versa.
 
 The transition strategy between ASPN and UN is as follows:
